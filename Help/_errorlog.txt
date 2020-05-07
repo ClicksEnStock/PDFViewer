@@ -1,0 +1,23 @@
+Microsoft HTML Help Compiler 4.74.8702
+
+Compiling c:\Creation\ClickteamDevelop\windows-edif-master-F25_trunk\Extensions\HIDDevice\MFX\Help\HIDDevice\HIDDevice.chm
+
+htm\index.htm
+htm\desc.htm
+htm\prop.htm
+htm\act.htm
+htm\cnd.htm
+htm\exp.htm
+ext_cnt.hhc
+ext_index.hhk
+htm\Images\Icon.png
+
+Compile time: 0 minutes, 0 seconds
+8	Topics
+27	Local links
+0	Internet links
+1	Graphic
+
+
+Created c:\Creation\ClickteamDevelop\windows-edif-master-F25_trunk\Extensions\HIDDevice\MFX\Help\HIDDevice\HIDDevice.chm, 14,139 bytes
+Compression increased file by 4,930 bytes.

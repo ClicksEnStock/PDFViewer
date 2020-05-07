@@ -1,0 +1,91 @@
+{
+    "About": {
+        "Name": "PDF Viewer Android Object",
+        "Author": "Conceptgame",
+        "Copyright": "Copyright (C) 2014 Conceptgame",
+        "Comment": "PDF Viewer for Android",
+        "URL": "",
+        "Help": "Help/PDFViewer/PDFViewer.chm",
+        "Identifier": "PDFV"
+    },
+    "ActionMenu": [
+		    "Separator",
+        [
+            0,
+            "Open PDF File"
+        ],
+		    [
+            1,
+            "Close PDF File"
+        ],
+		    [
+            2,
+            "Set Current Page"
+        ],
+		    "Separator"
+    ],
+    "ConditionMenu": [
+        [
+            0,
+            "On PDF file opened"
+        ]
+    ],
+    "ExpressionMenu": [
+		"Separator",
+		 [
+            0,
+            "Laset Error"
+        ],
+		[
+            1,
+            "Number of pages"
+        ],
+        [
+            2,
+            "Current page number"
+        ]
+    ],
+    "Actions": [
+        {
+            "Title": "Open PDF file %0",
+            "Parameters": [
+                [
+                    "Text",
+                    "PDF file name"
+                ]
+            ]
+        },
+		    {
+            "Title": "Close PDF file"
+        },
+		    {
+            "Title": "Set current page to %0",
+            "Parameters": [
+                [
+                    "Integer",
+                    "Page number (index based on 0)"
+                ]
+            ]
+        }
+    ],
+    "Conditions": [
+		    {
+            "Title": "%o : On PDF file opened",
+			      "Triggered": false
+			}
+    ],
+    "Expressions": [
+        {
+            "Title": "LastError$(",
+            "Returns": "Text"
+        },
+		{
+            "Title": "NumberOfPages(",
+            "Returns": "Integer"
+        },
+		{
+            "Title": "CurrentPageNumber(",
+            "Returns": "Integer"
+        }
+    ]
+}

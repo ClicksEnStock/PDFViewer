@@ -1,2 +1,4 @@
-# PDFViewer
-PDF Viewer, dummy Windows extension to produce mfx for Android extension
+HIDDevice
+=========
+
+EDIF HIDDevice Extension (ClickteamFusion 2.5)

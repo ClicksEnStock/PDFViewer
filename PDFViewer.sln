@@ -1,0 +1,27 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.438
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PDFViewer", "PDFViewer.vcxproj", "{B88E7082-B66D-4AE2-84EB-AD02D838DAB8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug Unicode|Win32 = Debug Unicode|Win32
+		Edittime Unicode|Win32 = Edittime Unicode|Win32
+		Runtime Unicode|Win32 = Runtime Unicode|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B88E7082-B66D-4AE2-84EB-AD02D838DAB8}.Debug Unicode|Win32.ActiveCfg = Debug Unicode|Win32
+		{B88E7082-B66D-4AE2-84EB-AD02D838DAB8}.Debug Unicode|Win32.Build.0 = Debug Unicode|Win32
+		{B88E7082-B66D-4AE2-84EB-AD02D838DAB8}.Edittime Unicode|Win32.ActiveCfg = Edittime Unicode|Win32
+		{B88E7082-B66D-4AE2-84EB-AD02D838DAB8}.Edittime Unicode|Win32.Build.0 = Edittime Unicode|Win32
+		{B88E7082-B66D-4AE2-84EB-AD02D838DAB8}.Runtime Unicode|Win32.ActiveCfg = Runtime Unicode|Win32
+		{B88E7082-B66D-4AE2-84EB-AD02D838DAB8}.Runtime Unicode|Win32.Build.0 = Runtime Unicode|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E0D0300B-269D-42FC-B227-2AF2FBEC6060}
+	EndGlobalSection
+EndGlobal
