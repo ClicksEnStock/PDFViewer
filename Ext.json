@@ -3,7 +3,7 @@
         "Name": "PDF Viewer Android Object",
         "Author": "Conceptgame",
         "Copyright": "Copyright (C) 2014 Conceptgame",
-        "Comment": "PDF Viewer for Android",
+        "Comment": "PDF Viewer for Android, v1.0",
         "URL": "",
         "Help": "Help/PDFViewer/PDFViewer.chm",
         "Identifier": "PDFV"
@@ -34,7 +34,7 @@
 		"Separator",
 		 [
             0,
-            "Laset Error"
+            "Last Error"
         ],
 		[
             1,
@@ -43,7 +43,8 @@
         [
             2,
             "Current page number"
-        ]
+        ],
+		"Separator"
     ],
     "Actions": [
         {

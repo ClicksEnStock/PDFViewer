@@ -87,7 +87,7 @@ EXPORTS
 ;	GetRunObjectTextColor	@94
 ;	SetRunObjectTextColor	@95
 
-; 	SetEditSize				@99
+ 	SetEditSize				@99
 	GetProperties			@100
 	ReleaseProperties		@101
 	GetPropValue			@102

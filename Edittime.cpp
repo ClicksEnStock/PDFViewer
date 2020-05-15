@@ -18,6 +18,7 @@
 enum {
 	PROPID_SETTINGS = PROPID_EXTITEM_CUSTOM_FIRST,
 
+	PROPID_DEBUG_LOGGING_ENABLED
 // Example
 // -------
 //	PROPID_TEXTTITLE,	
@@ -51,7 +52,7 @@ PropData Properties[] = {
 //	PropData_ComboBox	(PROPID_COMBO,		IDS_PROP_COMBO,			IDS_PROP_COMBO,	ComboList),
 //	PropData_Color		(PROPID_COLOR,		IDS_PROP_COLOR,			IDS_PROP_COLOR_INFO),
 
-
+	PropData_CheckBox(PROPID_DEBUG_LOGGING_ENABLED, IDS_PROPID_DEBUG_LOGGING_ENABLED, IDS_PROPID_DEBUG_LOGGING_ENABLED_INFO),
 	// End of table (required)
 	PropData_End()
 };
@@ -104,8 +105,9 @@ int WINAPI DLLExport CreateObject(mv _far *mV, fpLevObj loPtr, LPEDATA edPtr)
         Edif::Init(mV, edPtr);
 
 		// Set default object settings
-//		edPtr->swidth = 48;
-//		edPtr->sheight = 48;
+		edPtr->swidth = 100;
+		edPtr->sheight = 100;
+		edPtr->isDebugLoggingEnabled = 0;
 
         return 0;
 	}
@@ -138,7 +140,7 @@ BOOL WINAPI EditObject (mv _far *mV, fpObjInfo oiPtr, fpLevObj loPtr, LPEDATA ed
 // Called when the object has been resized
 //
 // Note: remove the comments if your object can be resized (and remove the comments in the .def file)
-/*
+
 BOOL WINAPI SetEditSize(LPMV mv, LPEDATA edPtr, int cx, int cy)
 {
 #ifndef RUN_ONLY
@@ -147,7 +149,7 @@ BOOL WINAPI SetEditSize(LPMV mv, LPEDATA edPtr, int cx, int cy)
 #endif // !defined(RUN_ONLY)
 	return TRUE;	// OK
 }
-*/
+
 
 // --------------------
 // PutObject
@@ -157,6 +159,9 @@ BOOL WINAPI SetEditSize(LPMV mv, LPEDATA edPtr, int cx, int cy)
 void WINAPI	DLLExport PutObject(mv _far *mV, fpLevObj loPtr, LPEDATA edPtr, ushort cpt)
 {
 #ifndef RUN_ONLY
+	//Initialize the object with a default size
+	edPtr->swidth = 100;
+	edPtr->sheight = 100;
 #endif // !defined(RUN_ONLY)
 }
 
@@ -197,8 +202,8 @@ void WINAPI DLLExport DuplicateObject(mv __far *mV, fpObjInfo oiPtr, LPEDATA edP
 void WINAPI DLLExport GetObjectRect(mv _far *mV, RECT FAR *rc, fpLevObj loPtr, LPEDATA edPtr)
 {
 #ifndef RUN_ONLY
-	rc->right = rc->left + SDK->Icon->GetWidth();	// edPtr->swidth;
-	rc->bottom = rc->top + SDK->Icon->GetHeight();	// edPtr->sheight;
+	rc->right = rc->left + edPtr->swidth;
+	rc->bottom = rc->top + edPtr->sheight;
 #endif // !defined(RUN_ONLY)
 	return;
 }
@@ -219,7 +224,9 @@ void WINAPI DLLExport EditorDisplay(mv _far *mV, fpObjInfo oiPtr, fpLevObj loPtr
 	if(!Surface)
         return;
 
-    SDK->Icon->Blit(*Surface, rc->left, rc->top, BMODE_TRANSP, BOP_COPY, 0);
+	Surface->Rectangle(rc->left, rc->top, rc->right, rc->bottom, RGB(200, 200, 200), 1, BLACK);
+	Surface->Line(rc->left, rc->top, rc->right - 1, rc->bottom - 1);
+	Surface->Line(rc->right - 1, rc->top + 1, rc->left + 1, rc->bottom - 1);
 
 #endif // !defined(RUN_ONLY)
 }
@@ -432,12 +439,13 @@ BOOL WINAPI DLLExport GetPropCheck(LPMV mV, LPEDATA edPtr, UINT nPropID)
 #ifndef RUN_ONLY
 	// Example
 	// -------
-//	switch (nPropID) {
-//
-//	// Return 0 (unchecked) or 1 (checked)
-//	case PROPID_CHECK:
-//		return edPtr->nCheck;
-//	}
+	switch (nPropID) {
+
+	// Return 0 (unchecked) or 1 (checked)
+	case PROPID_DEBUG_LOGGING_ENABLED:
+		return (bool)edPtr->isDebugLoggingEnabled;
+		break;
+	}
 
 #endif // !defined(RUN_ONLY)
 	return 0;		// Unchecked
@@ -516,14 +524,14 @@ void WINAPI DLLExport SetPropCheck(LPMV mV, LPEDATA edPtr, UINT nPropID, BOOL nC
 #ifndef RUN_ONLY
 	// Example
 	// -------
-//	switch (nPropID)
-//	{
-//	case PROPID_CHECK:
-//		edPtr->nCheck = nCheck;
-//		mvInvalidateObject(mV, edPtr);
-//		mvRefreshProp(mV, edPtr, PROPID_COMBO, TRUE);
-//		break;
-//	}
+	switch (nPropID)
+	{
+		case PROPID_DEBUG_LOGGING_ENABLED:
+			edPtr->isDebugLoggingEnabled = (nCheck == 0) ? 0 : 1;
+			mvInvalidateObject(mV, edPtr);
+			mvRefreshProp(mV, edPtr, PROPID_DEBUG_LOGGING_ENABLED, TRUE);
+			break;
+	}
 #endif // !defined(RUN_ONLY)
 }
 

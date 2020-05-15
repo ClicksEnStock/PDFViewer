@@ -113,6 +113,12 @@ BEGIN
     KPX_MARK                "MF2"
 END
 
+STRINGTABLE
+BEGIN
+IDS_DEBUGPARAMETERS     "Debug"
+IDS_PROPID_DEBUG_LOGGING_ENABLED "Enable debug logging"
+IDS_PROPID_DEBUG_LOGGING_ENABLED_INFO "Log debug infos"
+END
 #endif    // English (U.S.) resources
 /////////////////////////////////////////////////////////////////////////////
 

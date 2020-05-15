@@ -28,6 +28,7 @@ public:
         a pointer.
     */
 	TCHAR lastError[MAX_ERROR_STRING];
+	bool isDebugLoggingEnabled;
 
     /*  Add your actions, conditions and expressions as real class member
         functions here. The arguments (and return type for expressions) must

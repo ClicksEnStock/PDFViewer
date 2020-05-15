@@ -16,8 +16,9 @@ struct EDITDATA
 	extHeader		eHeader;
 
 	// Object's data
-//	short			swidth;
-//	short			sheight;
+	short		swidth;
+	short		sheight;
+	short		isDebugLoggingEnabled;
 
 };
 

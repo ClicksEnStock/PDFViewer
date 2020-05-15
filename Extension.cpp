@@ -9,6 +9,7 @@
 Extension::Extension(LPRDATA _rdPtr, LPEDATA edPtr, fpcob cobPtr)
     : rdPtr(_rdPtr), rhPtr(_rdPtr->rHo.hoAdRunHeader), Runtime(_rdPtr)
 {
+
     /*
         Link all your action/condition/expression functions to their IDs to match the
         IDs in the JSON here
@@ -31,6 +32,9 @@ Extension::Extension(LPRDATA _rdPtr, LPEDATA edPtr, fpcob cobPtr)
         anything from edPtr to the extension class here.
     
     */
+	rdPtr->rHo.hoImgWidth = edPtr->swidth;
+	rdPtr->rHo.hoImgHeight = edPtr->sheight;
+	isDebugLoggingEnabled = edPtr->isDebugLoggingEnabled!=0;
 
 }
 
@@ -45,37 +49,6 @@ Extension::~Extension()
 
 short Extension::Handle()
 {
-    /*
-       If your extension will draw to the MMF window you should first 
-       check if anything about its display has changed :
-
-           if (rdPtr->roc.rcChanged)
-              return REFLAG_DISPLAY;
-           else
-              return 0;
-
-       You will also need to make sure you change this flag yourself 
-       to 1 whenever you want to redraw your object
-     
-       If your extension won't draw to the window, but it still needs 
-       to do something every MMF loop use :
-
-            return 0;
-
-       If you don't need to do something every loop, use :
-
-            return REFLAG_ONESHOT;
-
-       This doesn't mean this function can never run again. If you want MMF
-       to handle your object again (causing this code to run) use this function:
-
-            Runtime.Rehandle();
-
-       At the end of the loop this code will run
-
-    */
-
-	// Will not be called next loop	
 	return REFLAG_DISPLAY;
 }
 
