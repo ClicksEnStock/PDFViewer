@@ -1,7 +1,9 @@
-﻿Build started 15.05.2020 17:36:42.
+﻿Build started 20.02.2021 15:27:49.
      1>Project "C:\Creation\GameDevelopment\Clickteam\Dev Extensions\ClickteamDevelopGithub\windows-edif-CF25\Extensions\PDFViewer\PDFViewer.vcxproj" on node 2 (Build target(s)).
-     1>ResourceCompile:
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\bin\rc.exe /D NDEBUG /D EDITOR /D _VC80_UPGRADE=0x0600 /D _USING_V110_SDK71_ /D _UNICODE /D UNICODE /l"0x0409" /I..\..\Inc /nologo /fo".\ReleaseEditorUnicode\Ext.res" Ext.rc 
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\..\Inc /I.\ /Zi /nologo /W3 /WX- /O1 /Ob1 /Oy- /D HWABETA /D COXSDK /D IN_EXT_VERSION2 /D _CRT_SECURE_NO_WARNINGS /D _CRT_SECURE_NO_DEPRECATE /D _WINDOWS /D EDITOR /D _VC80_UPGRADE=0x0600 /D _USING_V110_SDK71_ /D _WINDLL /D _UNICODE /D UNICODE /GF /Gm /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo".\ReleaseEditorUnicode\\" /Fd".\ReleaseEditorUnicode\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Actions.cpp
+         Actions.cpp
+     1>Actions.cpp(9): warning C4800: 'BOOL' : forcing value to bool 'true' or 'false' (performance warning)
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(1197,5): warning MSB8030: The linker switch "Minimum Required Version" requires "SubSystem" to be set.  Without "SubSystem", the "Minimum Required Version" would not be passed to linker and could prevent to the output binary from running on older Operating Systems.
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Creation\GameDevelopment\Clickteam\Dev Extensions\ClickteamDevelopGithub\windows-edif-CF25\Extensions\PDFViewer\\MFX\Extensions\Unicode\PDFViewer.mfx" /INCREMENTAL:NO /NOLOGO setupapi.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib ..\..\lib\mmfs2.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /DEF:".\Ext.def" /MANIFEST:NO /PDB:".\ReleaseEditorUnicode\PDFViewer.pdb" /TLBID:1 /DYNAMICBASE:NO /IMPLIB:".\ReleaseEditorUnicode\PDFViewer.lib" /MACHINE:X86 /SAFESEH /DLL .\ReleaseEditorUnicode\Ext.res
@@ -19,18 +21,10 @@
          .\ReleaseEditorUnicode\Edif.Runtime.obj
          .\ReleaseEditorUnicode\json.obj
             Creating library .\ReleaseEditorUnicode\PDFViewer.lib and object .\ReleaseEditorUnicode\PDFViewer.exp
-         PDFViewer.vcxproj -> C:\Creation\GameDevelopment\Clickteam\Dev Extensions\ClickteamDevelopGithub\windows-edif-CF25\Extensions\PDFViewer\\MFX\Extensions\Unicode\PDFViewer.mfx
-       PostBuildEvent:
-         ..\AutoInstall.bat C:\Creation\GameDevelopment\Clickteam\Dev Extensions\ClickteamDevelopGithub\windows-edif-CF25\Extensions\PDFViewer\\MFX\Extensions\Unicode\PDFViewer.mfx \Extensions\Unicode
-         :VCEnd
-         MFX File: C:\Creation\GameDevelopment\Clickteam\Dev
-         MFX Destination: Extensions\ClickteamDevelopGithub\windows-edif-CF25\Extensions\PDFViewer\\MFX\Extensions\Unicode\PDFViewer.mfx
-         MMF2 Dev Path: C:\Program Files (x86)\Multimedia Fusion Developer 2
-         Le fichier spécifié est introuvable.
-         Erreur : Erreur : le système n'a pas trouvé la clé ou la valeur de Registre spécifiée.
-         You don't have MMF2 Standard
-     1>Done Building Project "C:\Creation\GameDevelopment\Clickteam\Dev Extensions\ClickteamDevelopGithub\windows-edif-CF25\Extensions\PDFViewer\PDFViewer.vcxproj" (Build target(s)).
+     1>Actions.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) int __stdcall ExportImageW(class CImageFilterMgr *,wchar_t const *,class cSurface *,unsigned long)" (__imp_?ExportImageW@@YGHPAVCImageFilterMgr@@PB_WPAVcSurface@@K@Z) referenced in function "public: void __thiscall Extension::OpenPDFFile(wchar_t *)" (?OpenPDFFile@Extension@@QAEXPA_W@Z)
+     1>C:\Creation\GameDevelopment\Clickteam\Dev Extensions\ClickteamDevelopGithub\windows-edif-CF25\Extensions\PDFViewer\\MFX\Extensions\Unicode\PDFViewer.mfx : fatal error LNK1120: 1 unresolved externals
+     1>Done Building Project "C:\Creation\GameDevelopment\Clickteam\Dev Extensions\ClickteamDevelopGithub\windows-edif-CF25\Extensions\PDFViewer\PDFViewer.vcxproj" (Build target(s)) -- FAILED.
 
-Build succeeded.
+Build FAILED.
 
-Time Elapsed 00:00:00.49
+Time Elapsed 00:00:01.50

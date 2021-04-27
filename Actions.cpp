@@ -4,7 +4,7 @@
 
 void Extension::OpenPDFFile(TCHAR* fileName)
 {
-	
+
 }
 
 void Extension::ClosePDFFile()
